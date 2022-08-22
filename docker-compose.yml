@@ -1,6 +1,8 @@
 services:
   nginx:
     container_name: a13_nginx_container
+    build:
+      context: ./nginx
     image: a13_nginx
     depends_on:
       - app
@@ -10,5 +12,7 @@ services:
 
   app:
     container_name: a13_app_container
+    build:
+      context: ./app
     image: a13_app
     restart: always
