@@ -1,0 +1,14 @@
+services:
+  nginx:
+    container_name: a13_nginx_container
+    image: a13_nginx
+    depends_on:
+      - app
+    restart: always
+    ports:
+      - "80:80"
+
+  app:
+    container_name: a13_app_container
+    image: a13_app
+    restart: always
